@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+exec docker run -v `pwd`:/app --net host --rm -it ${DOCKER_OPTS} ototadana/node-dev-tools node ${NODE_OPTS} "$@"

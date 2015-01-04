@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+CONTAINER_NAME=node_dev_tools_1
+
+docker run --name ${CONTAINER_NAME} -it ototadana/node-dev-tools sudo npm "$@"
+docker commit ${CONTAINER_NAME} ototadana/node-dev-tools
+docker rm ${CONTAINER_NAME}
