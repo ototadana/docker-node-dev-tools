@@ -17,6 +17,7 @@ RUN echo "node ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
 ENV DISPLAY :99
 
 COPY ./config/. /config/
+RUN chmod -R +x /config/*
 
 USER node
 VOLUME ["/tools", "/app"]
